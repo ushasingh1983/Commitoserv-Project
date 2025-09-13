@@ -21,10 +21,10 @@ jobs:
       - name: Azure Login
         run: |
           az login --service-principal \
-            -u ${{ secrets.AZURE_CLIENT_ID }} \
-            -p ${{ secrets.AZURE_CLIENT_SECRET }} \
-            --tenant ${{ secrets.AZURE_TENANT_ID }}
-          az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+            -u ${{ secrets.AZURECLIENTID }} \
+            -p ${{ secrets.AZURESECRETID }} \
+            --tenant ${{ secrets.AZURETENANTID }}
+          az account set --subscription ${{ secrets.AZURESUBSCRPTIONID }}
 
       - name: Terraform Init
         run: terraform init
