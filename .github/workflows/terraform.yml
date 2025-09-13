@@ -72,7 +72,12 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+        CLIENT_ID: ${{ inputs.ARM_CLIENT_ID }}
+        CLIENT_SECRET: ${{ inputs.ARM_CLIENT_SECRET }}
+        SUBSCRIPTION_ID: ${{ inputs.ARM_SUBSCRIPTION_ID }}
+        TENANT_ID: ${{ inputs.ARM_TENANT_ID }}
+        STORAGE_ACCOUNT_NAME: ${{ inputs.STORAGE_ACCOUNT_NAME }}
+
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
